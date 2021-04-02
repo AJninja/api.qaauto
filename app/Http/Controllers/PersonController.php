@@ -15,4 +15,9 @@ class PersonController extends Controller
         dd($person);
         return $person;
     }
+
+    public function index(): PersonResourceCollection
+    {
+        return new PersonResourceCollection(Person::paginate());
+    }
 }
