@@ -20,7 +20,9 @@ use App\Http\Controllers\PersonController;
 //Route::apiResource('/person', 'App\Http\Controllers\PersonController');
 
 
-Route::apiResource('/person',     'App\Http\Controllers\PersonController');
+Route::apiResource('/person',  'App\Http\Controllers\PersonController');
+
+Route::apiResource('/person1',  'App\Http\Controllers\api\v1\PersonController');
 
 Route::prefix('v1')->group(function(){
     Route::apiResource('/person', 'App\Http\Controllers\api\v1\PersonController')
