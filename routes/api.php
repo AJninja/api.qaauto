@@ -20,4 +20,17 @@ use App\Http\Controllers\PersonController;
 //Route::apiResource('/person', 'App\Http\Controllers\PersonController');
 
 
-Route::apiResource('/person', 'App\Http\Controllers\PersonController');
+//Route::apiResource('/person', 'App\Http\Controllers\PersonController');
+
+Route::prefix('v1')->group(function(){
+    Route::apiResource('/person', 'App\Http\Controllers\Api\v1\PersonController')
+        ->only(['show','destroy','update','store']);
+
+    Route::apiResource('/people', 'App\Http\Controllers\Api\v1\PersonController')
+        ->only('index');
+});
+
+Route::prefix('v2')->group(function(){
+    Route::apiResource('/person', 'App\Http\Controllers\Api\v2\PersonController')
+        ->only('show');
+});

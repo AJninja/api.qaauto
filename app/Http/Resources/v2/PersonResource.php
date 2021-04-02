@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Resources;
+namespace App\Http\Resources\v2;
 
 use Illuminate\Http\Resources\Json\JsonResource;
 
@@ -14,6 +14,9 @@ class PersonResource extends JsonResource
      */
     public function toArray($request)
     {
-        return parent::toArray($request);
+        return [
+            'full_name' => $this->first_name .' '. $this->last_name,
+            'mobile_number' => $this->phone,
+        ];
     }
 }
