@@ -2,12 +2,14 @@
 
 namespace App\Http\Controllers;
 
+use App\Person;
 use Illuminate\Http\Request;
 
 class PersonController extends Controller
 {
-    public function show()
+    public function show(Person $person)
     {
-        
+        dd($person);
+        return $person;
     }
 }
