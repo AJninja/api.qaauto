@@ -14,4 +14,4 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/person/{person}', 'PersonController@show');
+Route::apiResource('/person', 'PersonController');
