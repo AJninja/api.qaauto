@@ -20,4 +20,4 @@ use App\Http\Controllers\PersonController;
 //Route::apiResource('/person', 'App\Http\Controllers\PersonController');
 
 
-Route::apiResource('/person', 'App\Http\Controllers\PersonController');
+Route::apiResource('/person', 'App/Http/Controllers/PersonController');
