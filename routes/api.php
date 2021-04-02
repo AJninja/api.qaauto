@@ -2,7 +2,7 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\PersonController;
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -16,8 +16,8 @@ use Illuminate\Support\Facades\Route;
 
 //Route::apiResource('/person', 'API\v1\PersonController');
 
-Route::prefix('v1')->group(function(){
-    Route::apiResource('/person', 'Api\v1\PersonController')
-        ->only(['show']);
 
-});
+//Route::apiResource('/person', 'App\Http\Controllers\PersonController');
+
+
+Route::apiResource('/person', 'App\Http\Controllers\PersonController');
