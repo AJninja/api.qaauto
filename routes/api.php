@@ -14,4 +14,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::apiResource('/person', 'PersonController');
+//Route::apiResource('/person', 'API\v1\PersonController');
+
+Route::prefix('v1')->group(function(){
+    Route::apiResource('/person', 'Api\v1\PersonController')
+        ->only(['show']);
+
+});
