@@ -14,12 +14,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-
-Route::get('/person',function(){
-    $person = [
-        'first_name'=> 'test',
-        'last_name'=> 'test1'
-    ];
-
+use App\Person;
+Route::get('/person/{person}', function(Person $person){
+    
     return $person;
+
 });
